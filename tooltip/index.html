@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<style type="text/css">
+	.box{
+		position: fixed;
+		height: 200px;
+		width: 300px;
+		top: -100px;
+		right: -100px;
+
+	}
+		.box div{
+			position: absolute;
+			text-align: center;
+			border-radius: 50%;
+			transition: 2s;
+			opacity: 0;
+			
+		}
+		
+		.box div:nth-of-type(1){
+			width: 80px;
+			height: 80px;
+			background: #fff;
+			transform: translate(110px,110px);
+			font: 20px/80px Arial;
+			z-index: 5;
+			opacity: 1;
+		}
+		.box div:nth-of-type(1):hover{
+			background: #47c9af;
+		}
+		.box div:nth-of-type(5){
+			width: 80px;
+			height: 80px;
+			background: #47c9af;
+			transform: translate(110px,110px);
+			font: 20px/80px Arial;
+			z-index: 4;
+			opacity: 0;
+		}
+		.box div:nth-of-type(2){
+			width: 140px;
+			height: 140px;
+			background: #555;
+			transform: translate(80px,80px);
+			transition-delay: 0.5;
+			z-index: 3;
+		}
+		.box div:nth-of-type(3){
+			width: 200px;
+			height: 200px;
+			background: #666;
+			transform: translate(50px,50px);
+			transition-delay: 1;
+			z-index: 2;
+		}
+		.box div:nth-of-type(4){
+			width: 260px;
+			height: 260px;
+			background: #999;
+			transition-delay: 1.5;
+			transform: translate(20px,20px);
+			z-index: 1;
+		}
+		
+	span{
+		position: absolute;
+		left: 10%;
+		bottom: 18%;
+		opacity: 1;
+		transform: rotate(50deg);
+		transition: 1s;
+	}
+	</style>
+</head>
+<body>
+	
+	<div class="box">	
+		<!-- <div class="divs"> -->
+				<div class="div div1">menu</div>
+				<div class="div div2"><span>page1</span></div>
+				<div class="div div3"><span>page1</span></div>
+				<div class="div div4"><span>page1</span></div>
+				<div class="div div5">close</div>
+		<!-- </div> -->
+	</div>
+	<div class="nav">
+		<ul>
+			<li><a class="tooltip tooltip-effect-1" href="#">Home<span class="tooltip-content"><i class="fa fa-fw fa-home"></i></span></a></li>
+			<li><a class="tooltip tooltip-effect-2" href="#">About me<span class="tooltip-content"><i class="fa fa-fw fa-user"></i></span></a></li>
+			<li><a class="tooltip tooltip-effect-3" href="#">Photography<span class="tooltip-content"><i class="fa fa-fw fa-camera-retro"></i></span></a></li>
+			<li><a class="tooltip tooltip-effect-4" href="#">Work<span class="tooltip-content"><i class="fa fa-fw fa-briefcase"></i></span></a></li>
+			<li><a class="tooltip tooltip-effect-5" href="#">Contact<span class="tooltip-content"><i class="fa fa-fw fa-envelope"></i></span></a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	var box =document.querySelector(".box")
+		var div1 = document.querySelector(".div1");
+		var div5 = document.querySelector(".div5");
+
+		var divs = box.children;
+		var onoff = true;
+		console.log(divs.length)
+
+		div1.onclick = function(){
+			if (onoff) {
+				for (var i = 0; i < divs.length; i++) {
+								divs[i].style.opacity = .9;
+
+				}
+			
+				div1.style.backgroundColor = '#47c9af';
+				div1.style.opacity =0;
+
+				div5.style.opacity =1;
+
+
+				
+			}else{
+					for (var i = 0; i < divs.length; i++) {
+							divs[i].style.opacity = 0;
+					}
+							div1.style.opacity =1;
+							div5.style.opacity =0;
+					div1.style.backgroundColor = '#fff';
+
+
+							
+			}
+			onoff = !onoff;
+
+		};
+		
+	</script>
+</body>
+</html>
