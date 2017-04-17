@@ -1,0 +1,229 @@
+ @charset "utf-8";
+ body,
+ p,
+ ul,
+ li {
+     margin: 0;
+     padding: 0;
+     font-size: 0.8rem;
+     background: #b9d7ef;
+ }
+
+ ul,
+ li,
+ ol {
+     list-style: none;
+ }
+
+ .clearfix:after {
+     content: "";
+     display: block;
+     clear: both;
+ }
+
+ .listLeft,
+ .listRight,
+ .findContent,
+ .findImg,
+ .routrLeft,
+ .routrRight {
+     box-sizing: border-box;
+ }
+
+ .float {
+     float: left;
+     margin: 10px;
+ }
+
+ .zz {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: #000;
+     opacity: .8;
+ }
+ /*---------------------------------------------------*/
+
+ .findHeader {
+     font-size: 0.95rem;
+     line-height: 2.2rem;
+     color: #fff;
+     height: 2.2rem;
+     background: #07467a;
+     /*border: 1px solid #000;*/
+     margin-bottom: 0.8rem;
+     overflow: hidden;
+     font-family: "微软雅黑";
+ }
+
+ .findHeaderText {}
+
+ .findHeaderBar {
+     padding: 0 5rem 0 0.5rem;
+     font-size: 1.6rem;
+ }
+
+ .findList,
+ .findContent {
+     margin: 0.5rem;
+     margin-bottom: 0;
+ }
+
+ .findList {
+     text-align: center;
+ }
+
+ .listLeft,
+ .listRight {
+     /*width: 6.5rem;*/
+     width: 50%;
+     /*height: 2rem;*/
+     height: 2rem;
+     line-height: 2rem;
+     float: left;
+     border: 1px solid gray;
+     border-radius: 0.3rem 0.3rem 0 0;
+     color: #000;
+ }
+
+ .findActive {
+     color: #b9d7ef;
+     background: #07467a;
+     border: none;
+ }
+
+ .listLeft {
+     /*background: gray;*/
+ }
+
+ .listRight {}
+
+ .findContent {
+     margin-top: 0;
+     border: 1px solid gray;
+     border-top: 0;
+     border-radius: 0 0 0.3rem 0.3rem;
+     background: #f8f8f8;
+ }
+
+ .route {}
+
+ .findRoute {
+     padding-top: 0.5rem;
+ }
+
+ .routrLeft,
+ .routrRight {
+     float: left;
+     height: 1.2rem;
+     width: 50%;
+     line-height: 1.2rem;
+ }
+
+ .routrLeft {
+     padding-left: 3.5rem;
+ }
+
+ .routrRight {
+     padding-left: 1.2rem;
+ }
+
+ .routrLeftImg {
+     display: inline-block;
+     width: 0.7rem;
+     height: 0.7rem;
+     background: url("../imgs/1.png") no-repeat;
+     background-size: cover;
+ }
+
+ .routeActive {
+     color: skyblue;
+     border-bottom: 0.12rem solid skyblue;
+ }
+
+ .findGo {
+     margin: 0 1.6rem;
+ }
+
+ .findTrip {
+     border-bottom: 1px solid lightslategray;
+     color: #dcdcdc;
+     line-height: 3.0rem;
+     height: 2.2rem;
+ }
+.findRadio{
+    display: inline-block;
+    height: 0.5rem;
+    width:0.5rem;
+    border: 0.025rem solid #07467a;
+    border-radius: 0.1rem;
+    background: #07467a;
+}
+ .findChild {
+     line-height: 0.7rem;
+     height: 2.4rem;
+ }
+
+.findChild1 {
+     float: left;
+     width: 3rem;
+     padding: 0.5rem 0.3rem;
+     color: #09649b;
+ }
+.findChild2{
+    padding: 0;
+    width:4rem;
+    margin-left: 1rem;
+    line-height: 2.4rem;
+color:#dcdcdc;
+}
+ .tripBac {
+     margin: 1.6rem 0 0 1.8rem;
+     display: inline-block;
+     width: 0.7rem;
+     height: 0.7rem;
+     background: url("../imgs/1.png") no-repeat;
+     background-size: cover;
+ }
+
+ .findCheck {
+     margin: 0.6rem 0;
+ }
+
+ .findCheck span {
+     font-size: 0.5rem;
+ }
+
+ .findSub {
+     border-radius: 0.24rem;
+     color: #fff;
+     background: #09649b;
+     text-align: center;
+     height: 2rem;
+     line-height: 2rem;
+     margin: 0.6rem 0;
+ }
+ .findFooter{
+     margin:0 1.75rem;
+ }
+ .findFooter1{
+line-height: 1.2rem;
+font-size: 0.6rem;
+color: #09649b;
+ }
+  .findFooter2{
+line-height: 0.45rem;
+font-size: 0.45rem;
+color: #8f8f8f;
+
+ }
+ /*--------------查询结束样式、、、列表开始样式------------------------*/
+
+
+ /*航班样式*/
+
+ .lis {
+     box-sizing: border-box;
+     border: 1px solid #000;
+     margin-bottom: 0.5rem;
+ }

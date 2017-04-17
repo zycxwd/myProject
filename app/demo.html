@@ -1,0 +1,197 @@
+<html><head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css.css">
+	</head>
+	<body>
+		<div id="app">
+			<div class="row">
+				<div class="col-xs-offset-2 col-xs-8">
+					<div class="page-header">
+						<h2>简单登录界面</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 col-xs-offset-2">
+					<div class="list-group">
+					    <a class="list-group-item" v-link="{ path: '/home'}">Home</a>
+					</div>
+				</div>
+				<div class="col-xs-6">
+					<router-view></router-view>
+				</div>
+				
+			</div>
+		</div>
+		<template id="home">
+			<div>
+				<p><input type="text" placeholder="请输入用户名" v-model="name" /></p>
+				<p><input type="text" placeholder="请输入密码" v-model="password" /></p>
+				<button v-on:click="greet">登录</button>
+				<p>{{msg}}</p>
+			</div>
+			<div>
+		        <ul class="nav nav-tabs">
+		            <li>
+		                <a v-link="{ path: '/home/news'}">News</a>
+		            </li>
+		            <li>
+		                <a v-link="{ path: '/home/message'}">Messages</a>
+		            </li>
+		        </ul>
+		        <router-view></router-view>
+		    </div>
+		</template>
+		<template id="list" v-if="test()">
+			<div>
+				<p>list</p>
+				<p>This is the tutorial list vue-router.</p>
+			</div>
+			<div>
+		        <table class="table table-hover table-bordered">
+		        	<thead>
+			            <tr>
+			                <th width="10%">id</th>
+			                <th width="30%">姓名</th>
+			                <th width="40%">内容</th>
+			                <th width="20%">备注</th>
+			            </tr>
+			        </thead>
+			         <tbody>
+			            <tr v-for="data in lists">
+			                <td v-text="data.num"></td>
+			                <td><a v-link="{ path:'/list/' +data.author}">{{data.author}}</a></td>
+			                <td v-text="data.contents"></td>
+			                <td v-text="data.bz"></td>
+			            </tr>
+			        </tbody>
+		        </table>
+		    </div>
+			<router-view></router-view>
+		</template>
+		<template id="news">
+		    <ul>
+		        <li>News 01</li>
+		        <li>News 02</li>
+		        <li>News 03</li>
+		    </ul>
+		</template>
+		<template id="message">
+		    <ul>
+		        <li>Message 01</li>
+		        <li>Message 02</li>
+		        <li>Message 03</li>
+		    </ul>
+		</template>
+	<script src="js/vue.js"></script>
+	<script src="js/vue-router.js"></script>
+	<script>
+		/* 创建组件构造器  */
+		const xiangqing = {
+		  template: '<div><p>列表详情展示</p>你现在的详情页为 {{ $route.params.author}}</div>'
+		}
+		var Home = Vue.extend({
+			template: '#home',
+			data: function() {
+				return {
+					msg: 'Hello, vue router!',
+					name: '',
+					password: '',
+					user:'false'
+				}
+			},
+			methods: {
+			    greet: function (event) {
+			      // `this` 在方法里指当前 Vue 实例
+			      if(this.name=="liuxingze" && this.password=="123456"){
+			      	
+			      	alert('用户名密码正确登录成功!')
+			      	this.$router.go({path:'/list'})
+			      	console.log(this.lists)
+			      }else{
+			      	alert('用户名密码不正确!')
+			      }
+			      // `event` 是原生 DOM 事件
+			      /*if (event) {
+			          alert(event.target.tagName)
+			      }*/
+			    }
+			  }
+			
+		})
+		var List = Vue.extend({
+			template: '#list',
+			data: function() {
+				return {
+					lists: [
+                        {num: 1, author: 'luozh1', contents: '样式基于bootstrap', bz: 'dsds'},
+                        {num: 2, author: 'luozh2', contents: '样式基于bootstrap显示个数，样式基于bootstrap', bz: 'dsds'},
+                        {num: 3, author: 'luozh3', contents: '样式基于bootstrapfalse为否', bz: 'dsds'},
+                        {num: 4, author: 'luozh4', contents: 'data为静态的表格数据数组；', bz: 'dsds'},
+                        {num: 5, author: 'luozh5', contents: '样式基于bootstrap', bz: 'dsds'}
+                    ],
+                    jj:"aaaaaaaa"
+				}
+			},
+			methods: {
+			    test: function (event) {
+			      // `this` 在方法里指当前 Vue 实例
+			      if(this.name=="liuxingze" && this.password=="123456"){
+			      	alert('用户名密码正确登录成功!')
+			      	this.$router.go({path:'/list'})
+			      	console.log(this.lists)
+			      }else{
+			      	alert('用户名密码不正确!')
+			      }
+			      // `event` 是原生 DOM 事件
+			      /*if (event) {
+			          alert(event.target.tagName)
+			      }*/
+			    }
+			  }
+		})
+		var News = Vue.extend({
+		    template: '#news'
+		})
+		var Message = Vue.extend({
+		    template: '#message'
+		})
+		var Luozh8 = Vue.extend({
+		    template: '#luozh8'
+		})
+		/* 创建路由器  */
+		var router = new VueRouter()
+		/* 创建路由映射  */
+		router.map({
+			'/home': {
+				component: Home,
+				// 定义子路由
+		        subRoutes: {
+		            '/news': {
+		                component: News
+		            },
+		            '/message': {
+		                component: Message
+		            }
+		        }
+			},
+			'/list': {
+				component: List,
+				subRoutes: {
+		            '/:author': {
+		                component: xiangqing
+		            }
+		       }	
+			}
+		})
+		router.redirect({
+			'/': '/home'
+		})
+
+		/* 启动路由  */
+		var App = Vue.extend({})
+		router.start(App, '#app')
+	</script>
+
+</body></html>
