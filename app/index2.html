@@ -27,9 +27,62 @@
 <body>
 
     <div id="app">
+
+
         <!--<div class="zz"></div>-->
         <router-view></router-view>
         <!--seek 查询页-->
+        <template id="home">
+            <div id="homes">
+                <header class=" yiJiaHeader">
+                    <span class="headerYiJia">壹嘉</span>
+                </header>
+        <router-view></router-view>
+                
+                <footer class="yiJiaFooter">
+                    <ul class="clearfix yiJiaUl">
+                        <li class="yiJiaLi yiJiaActive">首页</li>
+                        <li class="yiJiaLi">+</li>
+                        <li class="yiJiaLi">个人中心</li>
+                    </ul>
+                </footer>
+            </div>
+        </template>
+        <template>  
+            <div class="yiJiaImg">
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="yiJiacontent">
+                    <div class="common yiJIaWcs yiJiaBoxs">
+                        <ul class="yiJIaWcsUl">
+                            <li class="yiJIaWcsLi">我的行程</li>
+                            <li class="yiJIaWcsLi">出差申请</li>
+                            <li class="yiJIaWcsLi">审批</li>
+                        </ul>
+                    </div>
+                    <div class="common yiJIaGghh yiJiaBoxs">
+                            <ul class="yiJIaGghhUl">
+                            <li class="yiJIaGghhLi">国内机票</li>
+                            <li class="yiJIaGghhLi">国际机票</li>
+                            <li class="yiJIaGghhLi">国内酒店</li>
+                            <li class="yiJIaGghhLi">海外酒店</li>
+                            <li class="yiJIaGghhLi">火车票</li>
+                            <li class="yiJIaGghhLi">用车</li>
+                        </ul>
+                    </div>
+                    <div class="common yiJiaYz ">
+                        提供优质服务
+                    </div>
+                    <div class="common yiJiaFw ">
+
+                    </div>
+                </div>
+        </template>
         <template id="seek">
             <header class="findHeader">
                 <span class="findHeaderBar">&#8249</span>
@@ -57,11 +110,14 @@
                         <span :class="{routeActive:sdActiver1}" @click="privately">因私</span>
                     </div>
                 </div>
-                <div class="findGo">
-                    <div class="findTrip">选择出行人</div>
-                </div>
-                <div class="findGo">
-                    <div class="findTrip">选择出差申请单</div>
+
+                <div v-if="sdActivel1">
+                    <div class="findGo">
+                        <div class="findTrip">选择出行人</div>
+                    </div>
+                    <div class="findGo">
+                        <div class="findTrip">选择出差申请单</div>
+                    </div>
                 </div>
                 <div class="findGo clearfix">
                     <span class="findTrip" style="float: left;width: 30%; color:#646464;margin-right:0;">北京</span>
@@ -69,10 +125,18 @@
                     <span class="findTrip" style="float: right;width: 30%; color:#646464;text-align: right">昆明</span>
                 </div>
                 <div class="findGo clearfix">
-                    <div class="findTrip">
-                        <span style="color:#646464">6月4日</span>
-                        <span style="color:#646464; font-size:0.5rem;">周三</span>
+                    <div class="findTrip clearfix">
+                        <div class="findTripLeft">
+                            <span style="color:#646464">6月4日</span>
+                            <span style="color:#646464; font-size:0.5rem;">周三</span>
+                        </div>
+                        <div class="findTripRight" v-if="sdActiver">
+                            <span style="color:#646464">6月6日</span>
+                            <span style="color:#646464; font-size:0.5rem;">周五</span>
+                        </div>
+
                     </div>
+
                 </div>
                 <div class="findGo clearfix">
                     <div class="findTrip findChild">
@@ -99,9 +163,9 @@
 
                     </div>
                 </div>
-                <div class="findGo">
+                <div class="findGo" @click="fun">
                     <div class="findSub">
-                        <a @click="fun" style="color:#fff;">搜索</a>
+                        <a style="color:#fff;">搜索</a>
 
                         <!--<span></span>-->
                     </div>
@@ -124,38 +188,108 @@
                  <span class="findHeaderBar">&#8249</span>
                 <span style="text-align: center;display: inline-block;">北京-首都</span>
             </header>-->
-            <header class="findHeader" @click="prev">
-                <span class="findHeaderBar">&#8249</span>
-                <span>北京-首都</span>
-            </header>
-            <!--<div>
+            <div id="#list">
+                <header class="findHeader">
+                    <span class="findHeaderBar" @click="prev">&#8249</span>
+                    <span>北京-首都</span>
+                </header>
+                <!--<div>
                
             </div>-->
-            <div class="clearfix">
-                <div class="float">
-                    <span><</span>
-                    <span>前一天</span>
+                <div class="listDate clearfix common">
+                    <div class="float listDateLeft clearfix">
+                        <div class="float listDatePrev1">
+                            <span class="listFloat listDatePrev">&#8249</span>
+                        </div>
+                        <div class="float listDatePrev2">
+                            <span class="listDatePrev">前一天</span>
+                            <span class="listDatePrev3">¥554</span>
+                        </div>
+                    </div>
+                    <div class="float clearfix">
+                        <!--<div style="width:970px; margin:10px auto;">-->
+                        <div class=" listFloat laydateBg clearfix">
+                            <input class="laydate-icon" onclick="laydate()">
+                        </div>
+                        <!--</div>-->
+                    </div>
+                    <div class="float listDateRight clearfix">
+
+                        <div class="float listDatePrev2">
+                            <span class="listDateNext">后一天</span>
+                            <span class="listDatePrev3">¥854</span>
+                        </div>
+                        <div class="float listDatePrev1">
+                            <span class="listFloat listDatePrev">&#8250</span>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="float">
-                    <!--<div style="width:970px; margin:10px auto;">-->
-                    <input class="laydate-icon" onclick="laydate()">
-                    <!--</div>-->
-                </div>
-                <div class="float"><span>></span>
-                    <span>后一天</span></div>
-            </div>
-            <ul>
-                <li v-for="(index, todo)  in todos" class="clearfix lis" @click="clic">
-                    <div class="float" style="width:90px;">
+                <ul class="listUl">
+                    <li v-for="(index, todo)  in todos" class="clearfix listL" @click="clic">
+                        <!--<div class="float" style="width:90px;">
                         <div>{{todo.text1}}</div>
                         {{$index}}
                         <div><span>东航</span></div>
                     </div>
                     <div class="float" style="width:80px;">{{todo.text2}}</div>
-                    <div class="float">{{todo.text3}}</div>
-                    <!--{{ todo.text }}-->
-                </li>
-            </ul>
+                    <div class="float">{{todo.text3}}</div>-->
+                        <div class="float clearfix listTime">
+                            <div class="listTime1 clearfix">
+                                <div>
+                                    <span>00:10</span> </div>
+
+                                <div> <span>-----</span> </div>
+
+
+                                <div> <span>00:10</span> </div>
+
+                                <div class="listTime1S4"> <span>+1天</span> </div>
+
+
+
+
+                            </div>
+                            <div class="listTime2">
+                                <span class="listTime2S listTime2S1">
+                                首都-T2
+                            </span>
+                                <span class="listTime2S listTime2S2">
+                               周水子
+                            </span>
+                            </div>
+                            <div class="listTime3">
+                                <span></span>
+                                <span>东航MU2fsdfds8295</span>
+                            </div>
+                        </div>
+                        <div class="float listWei">
+                            <div class="listWeiS">
+                                违
+                            </div>
+                        </div>
+                        <div class="float listMoney">
+                            <div class="listMoney1">
+                                <span class="">¥1111554</span>
+                            </div>
+                            <div class="listTime2S listMoney2">
+                                <span>经济舱</span>
+                                <span>9.0折</span>
+                            </div>
+                            <div class="listMoney3">余三张</div>
+                        </div>
+
+                    </li>
+                </ul>
+                <div class="listFooter">
+                    <ul class="clearfix listFooterUl">
+                        <li class="listFooterLi listFooterActive">从早到晚</li>
+                        <li class="listFooterLi">价格</li>
+                        <li class="listFooterLi">准点率</li>
+                        <li class="listFooterLi">航班筛选</li>
+                    </ul>
+                </div>
+            </div>
         </template>
 
         <!-- 往返组件-->
@@ -177,6 +311,7 @@
                     <!--{{ todo.text }}-->
                 </li>
             </ul>
+
         </template>
         <!---->
         <!--遮罩层、、、-->

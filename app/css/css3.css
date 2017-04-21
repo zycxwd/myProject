@@ -1,0 +1,983 @@
+ @charset "utf-8";
+ body,
+ html {
+     height: 100%;
+     width: 100%;
+     background: #b9d7ef;
+     /*overflow: hidden;*/
+ }
+
+ body,
+ html,
+ footer,
+ header,
+ h2,
+ h3 p,
+ ul,
+ li,
+ input {
+     margin: 0;
+     padding: 0;
+     font-size: 0.8rem;
+ }
+
+ input:focus {
+     outline: none;
+ }
+ /*#seek{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: blue;
+    overflow: hidden;
+}*/
+
+ .abc {
+     position: absolute;
+     left: 0;
+     top: 100%;
+     height: 0;
+     width: 100%;
+     background: skyblue;
+     padding-top: 3.5rem;
+     opacity: .9;
+ }
+
+ .abc1 {
+     top: 0;
+     height: 100%;
+ }
+
+ ul,
+ li,
+ ol {
+     list-style: none;
+ }
+
+ .clearfix:after {
+     content: "";
+     display: block;
+     clear: both;
+ }
+
+ .common {
+     margin: 0 0.5rem;
+ }
+
+ .floatRight {
+     float: right;
+ }
+
+ .moneyColor {
+     color: #f5a337;
+ }
+
+ .listLeft,
+ .listRight,
+ .findContent,
+ .findImg,
+ .routrLeft,
+ .routrRight {
+     box-sizing: border-box;
+ }
+
+ .zz {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: #000;
+     opacity: .8;
+ }
+ /*----------------------------------home*/
+
+ #homes {}
+
+ .yiJiaHeader {
+     position: relative;
+     font-size: 0.95rem;
+     line-height: 3.2rem;
+     color: #fff;
+     height: 3.2rem;
+     background: #07467a;
+     text-align: center;
+     overflow: hidden;
+     font-family: "微软雅黑";
+ }
+
+ .yijiaadvices {
+     position: absolute;
+     width: 0.95rem;
+     height: 0.95rem;
+     right: 1.25rem;
+     top: 1.45rem;
+     background: url(../imgs/homepage/advices.png) no-repeat;
+     background-size: 0.95rem;
+ }
+
+ .yijiaadvicesNum {
+     position: absolute;
+     width: 0.75rem;
+     height: 0.5rem;
+     right: 0.5rem;
+     top: 1.3rem;
+     font-size: 0.1rem;
+     border-radius: 0.4rem;
+     background: #ff0000;
+ }
+
+ .yijiaadvicesNums {
+     position: absolute;
+     text-align: center;
+     left: 0;
+     top: 0;
+     line-height: 1;
+ }
+
+ .yiJiaImg {
+     width: 100%;
+     height: 5.5rem;
+     /*background: red;*/
+     overflow: hidden;
+     margin-bottom: 0.75rem;
+     background-size: cover;
+ }
+
+ .yiJiaImg1 {
+     width: 100%;
+     height: 5.5rem;
+ }
+
+ .yiJiaBoxs {
+     box-shadow: 0 0 20px 10px #96c1e3;
+ }
+
+ .yiJIaWcs {
+     height: 3rem;
+     background: #fff;
+     border-radius: 0.3rem;
+     margin-bottom: 0.75rem;
+     font-size: 0.6rem;
+     /*box-shadow: 0 0 10px #96c1e3;*/
+ }
+
+ .yiJIaWcsUl {
+     height: 100%;
+     padding: 0 1rem;
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .yiJIaGghhUl {
+     padding: 0 0.9rem;
+     padding-top: 0.5rem;
+     display: flex;
+     flex-wrap: wrap;
+     align-content: space-between;
+ }
+
+ .yiJIaWcsLi {
+     padding-top: 1.8rem;
+     font-size: 0.6rem;
+     text-align: center;
+     color: #4fb2ed;
+ }
+
+ .yiJIaWcsLi1 {
+     background: url(../imgs/homepage/myroute.png) no-repeat 50% 30%;
+     background-size: 0.9rem 1rem;
+ }
+
+ .yiJIaWcsLi2 {
+     background: url(../imgs/homepage/bussinesstr.png) no-repeat 50% 30%;
+     background-size: 0.95rem 1.1rem;
+     color: #4fbfed;
+ }
+
+ .yiJIaWcsLi3 {
+     background: url(../imgs/homepage/examine.png) no-repeat 50% 30%;
+     background-size: 1.1rem 1.1rem;
+ }
+
+ .yiJIaGghh {
+     height: 7.15rem;
+     background: #fff;
+     border-radius: 0.3rem;
+     margin-bottom: 0.75rem;
+ }
+
+ .yiJIaGghhLi {
+     width: 4.4rem;
+     box-sizing: border-box;
+     font-size: 0.6rem;
+     text-align: center;
+     padding-top: 2.2rem;
+     height: 3.3rem;
+ }
+
+ .yiJIaGghhLi0 {
+     background: url(../imgs/homepage/domesticticket.png) no-repeat 50% 0%;
+     background-size: 1.75rem 1.75rem;
+ }
+
+ .yiJIaGghhLi1 {
+     background: url(../imgs/homepage/internationaltic.png) no-repeat 50% 0%;
+     background-size: 1.75rem 1.75rem;
+ }
+
+ .yiJIaGghhLi2 {
+     background: url(../imgs/homepage/domestichot.png) no-repeat 50% 0%;
+     background-size: 1.75rem 1.75rem;
+ }
+
+ .yiJIaGghhLi3 {
+     background: url(../imgs/homepage/internationalhot.png) no-repeat 50% 0%;
+     background-size: 1.75rem 1.75rem;
+ }
+
+ .yiJIaGghhLi4 {
+     background: url(../imgs/homepage/railwaytic.png) no-repeat 50% 0%;
+     background-size: 1.75rem 1.75rem;
+ }
+
+ .yiJIaGghhLi5 {
+     background: url(../imgs/homepage/usecar.png) no-repeat 50% 0%;
+     background-size: 1.75rem 1.75rem;
+ }
+
+ .yiJiaYz {
+     height: 1rem;
+     border-radius: 0.3rem;
+     margin-bottom: 0.75rem;
+     font-size: 0.6rem;
+     color: #799fb6;
+     text-align: center;
+ }
+
+ .yiJiaYzLeft {
+     width: 6rem;
+     height: 0.075rem;
+     /*background: radial-gradient(#000 -50%,#fff 50%)*/
+ }
+
+ .yiJiaFw {
+     height: 3.45rem;
+     border-radius: 0.3rem;
+     margin-bottom: 0.75rem;
+ }
+
+ .yiJiaYzLi {
+     padding-top: 1.5rem;
+     font-size: 0.65rem;
+     color: #207ec0;
+     text-align: center;
+     line-height: 1.2rem;
+ }
+
+ .yiJiaYzLi0 {
+     background: url(../imgs/homepage/Transfer.png) no-repeat 50% 0;
+     background-size: 1.2rem 1.1rem;
+ }
+
+ .yiJiaYzLi1 {
+     background: url(../imgs/homepage/stoparea.png) no-repeat 50% 0;
+     background-size: 1.65rem 0.775rem;
+ }
+
+ .yiJiaYzLi2 {
+     background: url(../imgs/homepage/boardingcheck.png) no-repeat 50% 0;
+     background-size: 1.5rem 0.85rem;
+ }
+
+ .yiJiaYzLi3 {
+     background: url(../imgs/homepage/enterclose.png) no-repeat 50% 0;
+     background-size: 1.75rem 0.75rem;
+ }
+
+ .yiJiaFwUl {
+     height: 100%;
+     width: 100%;
+     display: flex;
+     /*flex-wrap: wrap;*/
+     align-content: space-between;
+ }
+
+ .yiJiaYzLi {
+     width: 25%;
+ }
+
+ .yiJiaFooter {
+     position: fixed;
+     height: 2.45rem;
+     left: 0;
+     bottom: 0;
+     height: 2.45rem;
+     width: 100%;
+ }
+
+ .yiJiaLi {
+     float: left;
+     height: 2.45rem;
+     font-size: 0.6rem;
+     text-align: center;
+     line-height: 3.6rem;
+     color: #fff;
+     width: 33.33%;
+     background: #09649b;
+ }
+
+ .yiJiaLiSp {
+     position: absolute;
+     height: 1rem;
+     width: 1rem;
+     background-size: 1rem;
+ }
+
+ .yiJiaLiSp1 {
+     position: absolute;
+     height: 1rem;
+     width: 1rem;
+     top: 20%;
+     left: 13.5%;
+     background: url(../imgs/homepage/homepage.png) no-repeat;
+     background-size: 0.9rem;
+ }
+
+ .yiJiaLiSp2 {
+     position: absolute;
+     height: 1rem;
+     width: 1rem;
+     top: 20%;
+     right: 13.5%;
+     background: url(../imgs/homepage/personalCenter.png) no-repeat;
+     background-size: 0.75rem;
+ }
+
+ .yiJiaLiRadio {
+     position: relative;
+     height: 100%;
+     width: 100%;
+ }
+
+ .yiJiaLiRadioBar {
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     border-radius: 50%;
+     margin-left: -0.775rem;
+     margin-top: -0.775rem;
+     background: #bce1ff;
+     height: 1.55rem;
+     width: 1.55rem;
+ }
+
+ .yiJiaLiRadioBarSp {
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     background: #09649b;
+     border-radius: 0.2rem;
+ }
+
+ .yiJiaLiRadioBarSp1 {
+     margin-left: -0.425rem;
+     margin-top: -0.1rem;
+     width: 0.85rem;
+     height: 0.2rem;
+ }
+
+ .yiJiaLiRadioBarSp2 {
+     margin-top: -0.425rem;
+     margin-left: -0.1rem;
+     width: 0.15rem;
+     height: 0.85rem;
+ }
+ /*---------------------------------------------------*/
+
+ .findHeader {
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     font-size: 0.95rem;
+     line-height: 3.2rem;
+     color: #fff;
+     height: 3.2rem;
+     background: #07467a;
+     text-align: center;
+     /*border: 1px solid #000;*/
+     margin-bottom: 0.8rem;
+     /*overflow: hidden;*/
+     font-family: "微软雅黑";
+     z-index: 111;
+ }
+
+ .findHeaderText {}
+
+ .findHeaderBar {
+     position: absolute;
+     font-size: 1.6rem;
+     height: 0.75rem;
+     width: 0.45rem;
+     left: 0.5rem;
+     top: 1.4rem;
+     background: url("../imgs/serviceProvider/arrowReturns.png") no-repeat;
+     background-size: 0.45rem 0.75rem;
+ }
+
+ .findList,
+ .findContent {
+     margin: 0.5rem;
+     margin-bottom: 0;
+ }
+
+ .findList {
+     text-align: center;
+     /*margin-top:3.9rem;*/
+ }
+
+ .listLeft,
+ .listRight {
+     /*width: 6.5rem;*/
+     width: 50%;
+     /*height: 2rem;*/
+     height: 2rem;
+     line-height: 2rem;
+     float: left;
+     border: 1px solid gray;
+     border-radius: 0.3rem 0.3rem 0 0;
+     color: #000;
+ }
+
+ .listLeft {
+     /*background: gray;*/
+ }
+
+ .listRight {}
+
+ .findContent {
+     margin-top: 0;
+     border: 1px solid gray;
+     border-top: 0;
+     border-radius: 0 0 0.3rem 0.3rem;
+     background: #f8f8f8;
+ }
+
+ .route {}
+
+ .findRoute {
+     padding-top: 0.5rem;
+ }
+
+ .routrLeft,
+ .routrRight {
+     float: left;
+     height: 1.2rem;
+     width: 50%;
+     line-height: 1.2rem;
+ }
+
+ .routrLeft {
+     padding-left: 3.5rem;
+ }
+
+ .routrRight {
+     padding-left: 1.2rem;
+ }
+
+ .routrLeftImg {
+     display: inline-block;
+     width: 0.7rem;
+     height: 0.7rem;
+     background-size: cover;
+ }
+
+ .findGo {
+     margin: 0 1.6rem;
+ }
+
+ .findTrip {
+     border-bottom: 1px solid lightslategray;
+     color: #dcdcdc;
+     line-height: 3.0rem;
+     height: 2.2rem;
+ }
+
+ .findTripInp {
+     height: 100%;
+     border: none;
+     vertical-align: top;
+ }
+
+ .findTripLeft {
+     float: left;
+     margin-left: 0.3rem;
+ }
+
+ .findTripRight {
+     float: right;
+     margin-right: 0.3rem;
+ }
+
+ .findRadio {
+     display: inline-block;
+     height: 0.5rem;
+     width: 0.5rem;
+     border: 0.025rem solid #07467a;
+     border-radius: 0.1rem;
+ }
+
+ .findRadioBg {
+     background: url("../imgs/ticketInquires/dui.png") no-repeat;
+     background-size: 0.4rem;
+ }
+
+ .findChild {
+     line-height: 0.7rem;
+     height: 2.4rem;
+ }
+
+ .findChild1 {
+     float: left;
+     width: 3rem;
+     padding: 0.5rem 0.3rem;
+     color: #09649b;
+ }
+
+ .findChild2 {
+     padding: 0;
+     width: 4rem;
+     margin-left: 1rem;
+     line-height: 2.4rem;
+     color: #dcdcdc;
+ }
+
+ #list {
+     height: 1000px;
+ }
+
+ .tripBac {
+     margin: 1.6rem 0 0 1.8rem;
+     display: inline-block;
+     width: 0.7rem;
+     height: 0.7rem;
+     /*background: url("../imgs/1.png") no-repeat;*/
+     background-size: cover;
+ }
+
+ .findCheck {
+     margin: 0.6rem 0;
+ }
+
+ .findCheck span {
+     font-size: 0.5rem;
+ }
+
+ .findSub {
+     border-radius: 0.24rem;
+     color: #fff;
+     background: #09649b;
+     text-align: center;
+     height: 2rem;
+     line-height: 2rem;
+     margin: 0.6rem 0;
+ }
+
+ .findFooter {
+     margin: 0 1.75rem;
+ }
+
+ .findFooter1 {
+     line-height: 1.2rem;
+     font-size: 0.6rem;
+     color: #09649b;
+ }
+
+ .findFooter2 {
+     line-height: 0.45rem;
+     font-size: 0.45rem;
+     color: #8f8f8f;
+ }
+ /*--------------查询结束样式、、、列表开始样式------------------------*/
+ /*航班样式*/
+
+ .float {
+     float: left;
+     /*margin: 10px;*/
+ }
+
+ .laydateBg {
+     background: url(../imgs/dateicon.png) no-repeat;
+     position: absolute;
+     background-size: 1.3rem;
+ }
+
+ .laydate-icon {
+     width: 8.75rem;
+     height: 1.65rem;
+     border: none;
+     border-radius: 0.3rem;
+     padding-left: 2.25rem;
+     background: #fff;
+     /*margin: 0 0.3rem;*/
+ }
+
+ .listDate {
+     margin-bottom: 0.75rem;
+     /*margin-top: 3.9rem;*/
+ }
+
+ .listUl {}
+
+ #list {
+     height: 100%;
+     width: 100%;
+     overflow: hidden;
+ }
+
+ .listDateLeft,
+ .listDateRight {
+     font-size: 0.5rem;
+     color: #07467a;
+ }
+
+ .listDateRight {
+     float: right;
+ }
+
+ .listDatePrev1 {
+     font-size: 1rem;
+ }
+
+ .listDatePrev2 {
+     width: 2.75rem;
+     text-align: center;
+ }
+
+ .listDatePrev3 {
+     font-size: 0.4rem;
+     color: #f5a337;
+ }
+
+ .listL {
+     box-sizing: border-box;
+     padding: 0.45rem 0 0.4rem 0.6rem;
+     background: #fff;
+     height: 4.15rem;
+     margin: 0 0.5rem 0.5rem 0.5rem;
+     border-radius: 0.5rem;
+ }
+
+ .listTime {
+     width: 7.65rem;
+ }
+
+ .listTime1 {
+     font: bold 0.7rem/1.2rem "微软雅黑";
+     height: 1.2rem;
+ }
+
+ .listTime1 div {
+     float: left;
+ }
+
+ .listTime2S {
+     display: inline-block;
+     font-size: 0.5rem;
+     color: #999;
+     line-height: 0.85rem;
+ }
+
+ .listTime2S1 {
+     width: 4.5rem;
+     padding-left: 0.25rem;
+ }
+
+ .listTime3 {
+     font-size: 0.45rem;
+     line-height: 1.25rem;
+     color: #999;
+ }
+
+ .listTime1S4 {
+     position: relative;
+     color: #999;
+     font-size: 0.3rem;
+ }
+
+ .listTime1S4 span {
+     position: absolute;
+     width: 1.5rem;
+     font-size: 0.45rem;
+     line-height: 0.8rem;
+     left: 0;
+     top: 0;
+ }
+
+ .listWei {
+     width: 2.75rem;
+     height: 100%;
+     padding: 1rem 0 0 0.5rem;
+ }
+
+ .listWeiS {
+     /*display: inline-block;*/
+     height: 1rem;
+     width: 1rem;
+     font-size: 0.5rem;
+     text-align: center;
+     line-height: 1rem;
+     background: #fc5353;
+     color: #fff;
+     border-radius: 0.2rem;
+ }
+
+ .listMoney {
+     width: 4rem;
+ }
+
+ .listMoney1 {
+     color: #f5a337;
+ }
+
+ .listMoney3 {
+     text-align: right;
+     padding-right: 0.75rem;
+     font-size: 0.45rem;
+     color: #ff1e00;
+ }
+
+ .listFooter {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     height: 2.45rem;
+     width: 100%;
+ }
+
+ .listFooterUl {
+     background: #3e6a8f;
+     opacity: .94;
+ }
+
+ .listFooterLi {
+     float: left;
+     height: 2.5rem;
+     /*line-height: 3.5rem;*/
+     background: #3e6a8f;
+     padding-top: 1.6rem;
+     text-align: center;
+     font-size: 0.55rem;
+     width: 33.33%;
+     color: #fff;
+ }
+
+ .listFooterLi1w {
+     background: url(../imgs/flightInquires/mToEw.png) no-repeat 50% 10%;
+     background-size: 1.2rem;
+ }
+
+ .listFooterLi1 {
+     color: #dc9b43;
+     background: url(../imgs/flightInquires/mToE.png) no-repeat 50% 10%;
+     background-size: 1.2rem;
+ }
+
+ .listFooterLi2w {
+     background: url(../imgs/flightInquires/costw.png) no-repeat 50% 10%;
+     background-size: 1.2rem;
+ }
+
+ .listFooterLi2 {
+     color: #dc9b43;
+     background: url(../imgs/flightInquires/cost.png) no-repeat 50% 10%;
+     background-size: 1.2rem;
+ }
+
+ .listFooterLi3w {
+     background: url(../imgs/flightInquires/filtratew.png) no-repeat 50% 10%;
+     background-size: 1.2rem;
+ }
+
+ .listFooterLi3 {
+     color: #dc9b43;
+     background: url(../imgs/flightInquires/filtrate.png) no-repeat 50% 10%;
+     background-size: 1.2rem;
+ }
+ /*-------------------------选择服务商---------------------------*/
+
+ .serProTravel {
+     height: 5.45rem;
+     margin-bottom: 0.5rem;
+     /*margin-top: 3.9rem;*/
+     padding-left: 2.5rem;
+     padding-top: 0.8rem;
+     background: url(../imgs/serviceProvider/airTicket.png) no-repeat;
+     background-size: 15rem 5.5rem;
+ }
+
+ .serProTravelLi {
+     font-size: 0.75rem;
+     line-height: 1.15rem;
+     color: #323232;
+ }
+
+ .serProTravel1 {
+     font-size: 0.5rem;
+     height: 0.55rem;
+     margin-bottom: 0.4rem;
+     color: #999;
+ }
+
+ .serProTravel1s {
+     display: inline-block;
+     width: 0.7rem;
+     height: 0.55rem;
+     background: url(../imgs/serviceProvider/eastAir.png) no-repeat;
+     background-size: 0.7rem 0.55rem;
+ }
+
+ .serProTravel2Mid {
+     width: 1.5rem;
+     height: 2rem;
+     margin: 0 0.5rem;
+     background: url(../imgs/serviceProvider/arrows.png) no-repeat 0 70%;
+     background-size: 1.5rem 0.325rem;
+ }
+
+ .serProTravel2Tim {
+     position: relative;
+     text-align: center;
+ }
+
+ .serProTravel2TimSp {
+     position: absolute;
+     font-size: 0.3rem;
+     width: 1.65rem;
+     text-align: left;
+     top: -0.3rem;
+     color: #999;
+ }
+
+ .touristClassStar {
+     display: inline-block;
+     line-height: 2.7rem;
+     padding-left: 0.2rem;
+     width: 2rem;
+     color: #646464;
+     font-size: 0.6rem;
+ }
+
+ .allTank {
+     height: 2.25rem;
+     background: #fff;
+     border-radius: 0.3rem;
+     padding-left: 0.75rem;
+     margin-bottom: 0.25rem;
+ }
+
+ .touristClass {
+     line-height: 2.25rem;
+ }
+
+ .allTankList {
+     height: 3.4rem;
+     margin: 0 1rem;
+     padding: 0.5rem;
+     margin-bottom: 0.25rem;
+     background: #fff;
+     border-radius: 0.3rem;
+ }
+
+ .allTankListTop {
+     height: 1.5rem;
+ }
+
+ .allTankListDeta {}
+
+ .allTankListBg {}
+
+ .allTankListText {
+     font-size: 0.6rem;
+     color: #646464;
+     margin-right: 0.5rem;
+ }
+
+ .allTankListSec {
+     font-size: 0.6rem;
+     /*line-height: 1rem;*/
+     border-bottom: 1px solid #4fb2ed;
+     /*text-decoration:     underline;*/
+     color: #4fb2ed;
+ }
+
+ .allTankListMon {
+     font-size: 0.5rem;
+ }
+
+ .allTankListMon {
+     font-size: 0.7rem;
+ }
+
+ .allTankListJia {
+     font-size: 0.45rem;
+     color: #646464;
+ }
+
+ .allTankListOrder {
+     height: 1.5rem;
+     width: 1.5rem;
+     line-height: 1.5rem;
+     text-align: center;
+     background: #f5a337;
+     border-radius: 0.3rem;
+     color: #fff;
+ }
+
+ .allTankListBottom {
+     font-size: 0.45rem;
+     line-height: 1.4rem;
+     color: #808080;
+ }
+
+ .allTaMoreService {
+     position: relative;
+     font-size: 0.7rem;
+     text-align: center;
+     margin: 0.5rem;
+     color: #07467a;
+ }
+
+ .allTaMoreServiceBg {
+     position: absolute;
+     left: 9.6rem;
+     top: 0.35rem;
+     height: 0.4rem;
+     width: 0.4rem;
+     background: url(../imgs/serviceProvider/allTaMoreService.png) no-repeat;
+     background-size: 0.4rem;
+ }
+ /*---------------------active------------*/
+
+ .findActive {
+     color: #b9d7ef;
+     background: #07467a;
+     border: none;
+ }
+
+ .routeActive {
+     color: skyblue;
+     border-bottom: 0.12rem solid skyblue;
+ }
+
+ .listFooterActive {
+     color: #f5a337;
+ }
+
+ .yiJiaUl .v-link-active {
+     background: #07467a;
+ }
+
+ .listFooterUl .v-link-active {
+     /*background: url(../imgs/ticketInquires/mToE.png) no-repeat 50% 10%;
+        background-size: 1.2rem;*/
+ }

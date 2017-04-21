@@ -1,12 +1,19 @@
  @charset "utf-8";
  body,
+ html {
+     height: 100%;
+     width: 100%;
+     background: #b9d7ef;
+     /*overflow: hidden;*/
+ }
+
+ body,
  p,
  ul,
  li {
      margin: 0;
      padding: 0;
      font-size: 0.8rem;
-     background: #b9d7ef;
  }
 
  ul,
@@ -21,6 +28,10 @@
      clear: both;
  }
 
+ .common {
+     margin: 0 0.5rem;
+ }
+
  .listLeft,
  .listRight,
  .findContent,
@@ -30,17 +41,117 @@
      box-sizing: border-box;
  }
 
- .float {
-     float: left;
-     margin: 10px;
- }
-
  .zz {
      position: absolute;
      width: 100%;
      height: 100%;
      background: #000;
      opacity: .8;
+ }
+ /*----------------------------------home*/
+#homes{
+
+}
+ .yiJiaHeader {
+     font-size: 0.95rem;
+     line-height: 2.2rem;
+     color: #fff;
+     height: 2.2rem;
+     background: #07467a;
+     text-align: center;
+     overflow: hidden;
+     font-family: "微软雅黑";
+ }
+
+ .yiJiaImg {
+     width: 100%;
+     height: 5.5rem;
+     background: red;
+     margin-bottom: 0.75rem;
+ }
+
+ .yiJiaBoxs {
+     box-shadow: 0 0 20px 10px #96c1e3;
+ }
+
+ .yiJIaWcs {
+     height: 3rem;
+     background: #fff;
+     border-radius: 0.3rem;
+     margin-bottom: 0.75rem;
+        font-size: 0.6rem;
+     
+     /*box-shadow: 0 0 10px #96c1e3;*/
+ }
+
+ .yiJIaWcsUl {
+    height: 100%;
+     
+     padding:  0 1rem;
+     display: flex;
+  justify-content: space-between;
+  
+ }
+.yiJIaGghhUl{
+     padding:  0 0.9rem;
+     display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.yiJIaWcsLi{
+    padding-top: 1.8rem;
+        font-size: 0.6rem;
+text-align: center;    
+    
+}
+ .yiJIaGghh {
+     height: 7.15rem;
+     background: #fff;
+     border-radius: 0.3rem;
+     margin-bottom: 0.75rem;
+ 
+ }
+.yiJIaGghhLi{
+    width:4.4rem;
+    box-sizing: border-box;
+        font-size: 0.6rem;
+text-align: center;    
+    
+    padding-top: 2.2rem;
+    height: 3.3rem;
+}
+ .yiJiaYz {
+     height: 1rem;
+     border-radius: 0.3rem;
+     margin-bottom: 0.75rem;
+        font-size: 0.6rem;
+     text-align: center;
+ }
+
+ .yiJiaFw {
+     height: 3.45rem;
+     background: #fff;
+     border-radius: 0.3rem;
+     margin-bottom: 0.75rem;
+ }
+
+ .yiJiaFooter {
+     position: fixed;
+     height: 2.45rem;
+     left: 0;
+     bottom: 0;
+     height: 2.45rem;
+     width: 100%;
+ }
+
+ .yiJiaLi {
+     float: left;
+     height: 2.45rem;
+     text-align: center;
+     line-height: 3.3rem;
+     color: #fff;
+     width: 33.33%;
+     background: #09649b;
  }
  /*---------------------------------------------------*/
 
@@ -151,32 +262,46 @@
      line-height: 3.0rem;
      height: 2.2rem;
  }
-.findRadio{
-    display: inline-block;
-    height: 0.5rem;
-    width:0.5rem;
-    border: 0.025rem solid #07467a;
-    border-radius: 0.1rem;
-    background: #07467a;
-}
+
+ .findTripLeft {
+     float: left;
+     margin-left: 0.3rem;
+ }
+
+ .findTripRight {
+     float: right;
+     margin-right: 0.3rem;
+ }
+
+ .findRadio {
+     display: inline-block;
+     height: 0.5rem;
+     width: 0.5rem;
+     border: 0.025rem solid #07467a;
+     border-radius: 0.1rem;
+     background: #07467a;
+ }
+
  .findChild {
      line-height: 0.7rem;
      height: 2.4rem;
  }
 
-.findChild1 {
+ .findChild1 {
      float: left;
      width: 3rem;
      padding: 0.5rem 0.3rem;
      color: #09649b;
  }
-.findChild2{
-    padding: 0;
-    width:4rem;
-    margin-left: 1rem;
-    line-height: 2.4rem;
-color:#dcdcdc;
-}
+
+ .findChild2 {
+     padding: 0;
+     width: 4rem;
+     margin-left: 1rem;
+     line-height: 2.4rem;
+     color: #dcdcdc;
+ }
+
  .tripBac {
      margin: 1.6rem 0 0 1.8rem;
      display: inline-block;
@@ -203,27 +328,192 @@ color:#dcdcdc;
      line-height: 2rem;
      margin: 0.6rem 0;
  }
- .findFooter{
-     margin:0 1.75rem;
- }
- .findFooter1{
-line-height: 1.2rem;
-font-size: 0.6rem;
-color: #09649b;
- }
-  .findFooter2{
-line-height: 0.45rem;
-font-size: 0.45rem;
-color: #8f8f8f;
 
+ .findFooter {
+     margin: 0 1.75rem;
+ }
+
+ .findFooter1 {
+     line-height: 1.2rem;
+     font-size: 0.6rem;
+     color: #09649b;
+ }
+
+ .findFooter2 {
+     line-height: 0.45rem;
+     font-size: 0.45rem;
+     color: #8f8f8f;
  }
  /*--------------查询结束样式、、、列表开始样式------------------------*/
-
-
  /*航班样式*/
 
- .lis {
+ .float {
+     float: left;
+     /*margin: 10px;*/
+ }
+
+ .laydateBg {
+     background: url(../imgs/dateicon.png) no-repeat;
+     position: absolute;
+     background-size: 1.3rem;
+ }
+
+ .laydate-icon {
+     width: 8.75rem;
+     height: 1.65rem;
+     border: none;
+     border-radius: 0.3rem;
+     padding-left: 2.25rem;
+     background: #fff;
+     /*margin: 0 0.3rem;*/
+ }
+
+ .listDate {
+     margin-bottom: 0.75rem;
+ }
+
+ #list {
+     height: 100%;
+     width: 100%;
+     overflow: hidden;
+ }
+
+ .listDateLeft,
+ .listDateRight {
+     font-size: 0.5rem;
+     color: #07467a;
+ }
+
+ .listDateRight {
+     float: right;
+ }
+
+ .listDatePrev1 {
+     font-size: 1rem;
+ }
+
+ .listDatePrev2 {
+     width: 2.75rem;
+     text-align: center;
+ }
+
+ .listDatePrev3 {
+     font-size: 0.4rem;
+     color: #f5a337;
+ }
+
+ .listL {
      box-sizing: border-box;
-     border: 1px solid #000;
-     margin-bottom: 0.5rem;
+     padding: 0.45rem 0 0.4rem 0.6rem;
+     background: #fff;
+     height: 4.15rem;
+     margin: 0 0.5rem 0.5rem 0.5rem;
+     border-radius: 0.5rem;
+ }
+
+ .listTime {
+     width: 7.65rem;
+ }
+
+ .listTime1 {
+     font: bold 0.7rem/1.2rem "微软雅黑";
+     height: 1.2rem;
+ }
+
+ .listTime1 div {
+     float: left;
+ }
+
+ .listTime2S {
+     display: inline-block;
+     font-size: 0.5rem;
+     color: #999;
+     line-height: 0.85rem;
+ }
+
+ .listTime2S1 {
+     width: 4.5rem;
+     padding-left: 0.25rem;
+ }
+
+ .listTime3 {
+     font-size: 0.45rem;
+     line-height: 1.25rem;
+     color: #999;
+ }
+
+ .listTime1S4 {
+     position: relative;
+     color: #999;
+     font-size: 0.3rem;
+ }
+
+ .listTime1S4 span {
+     position: absolute;
+     width: 1.5rem;
+     font-size: 0.45rem;
+     line-height: 0.8rem;
+     left: 0;
+     top: 0;
+ }
+
+ .listWei {
+     width: 2.75rem;
+     height: 100%;
+     padding: 1rem 0 0 0.5rem;
+ }
+
+ .listWeiS {
+     /*display: inline-block;*/
+     height: 1rem;
+     width: 1rem;
+     font-size: 0.5rem;
+     text-align: center;
+     line-height: 1rem;
+     background: #fc5353;
+     color: #fff;
+     border-radius: 0.2rem;
+ }
+
+ .listMoney {
+     width: 4rem;
+ }
+
+ .listMoney1 {
+     color: #f5a337;
+ }
+
+ .listMoney3 {
+     text-align: right;
+     padding-right: 0.75rem;
+     font-size: 0.45rem;
+     color: #ff1e00;
+ }
+
+ .listFooter {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     height: 2.45rem;
+     width: 100%;
+ }
+
+ .listFooterUl {
+     background: #3e6a8f;
+     opacity: .94;
+ }
+
+ .listFooterLi {
+     float: left;
+     height: 100%;
+     line-height: 3.5rem;
+     background: #3e6a8f;
+     text-align: center;
+     font-size: 0.55rem;
+     width: 25%;
+     color: #fff;
+ }
+
+ .listFooterActive {
+     color: #f5a337;
  }

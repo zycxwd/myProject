@@ -3,6 +3,18 @@ var App = Vue.extend();
 
 //2. Home News组件都准备
 //查询组件
+
+var Home = Vue.extend({
+    data() {
+        return {
+           
+        }
+    },
+    template: "#home",
+    methods: {
+       
+    }
+});
 var Seek = Vue.extend({
     data() {
         return {
@@ -130,6 +142,13 @@ var Listsub = Vue.extend({
 var router = new VueRouter();
 //4. 关联
 router.map({
+    'home': {
+        data() {
+            return {
+            }
+        },
+        component: Home
+    },
     'seek': {
         data() {
             return {
@@ -149,5 +168,5 @@ router.map({
 router.start(App, '#app');
 //6. 跳转
 router.redirect({
-    '/': 'seek'
+    '/': 'home'
 });
