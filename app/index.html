@@ -19,7 +19,9 @@
             html.style.fontSize = w / 16 + 'px';
         })()
     </script>
-    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="css/css3.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    
     <script src="lib/jquery-1.7.2.js"></script>
     <script src="lib/bootstrap.js"></script>
 </head>
@@ -29,203 +31,510 @@
     <div id="app">
         <!--<div class="zz"></div>-->
         <router-view></router-view>
-        <!--seek 查询页-->
-        <template id="seek">
-            <header class="findHeader">
-                <span class="findHeaderBar">&#8249</span>
-                <span>机票查询</span>
+        <!--------------------------------------------home-------------------------------------------->
+
+        <template id="home">
+            <div id="homes">
+
+
+                <!--star路由位置-->
+                <router-view></router-view>
+                <!--end路由位置-->
+                <footer class="yiJiaFooter">
+                    <ul class="clearfix yiJiaUl">
+                        <li v-link="{path:'/home/homepage'}" class="yiJiaLi yiJiaActive" @click="homepage">
+<span class="yiJiaLiSp yiJiaLiSp1"></span>
+                            首页
+                        </li>
+                        <li class="yiJiaLi">
+                            <div class="yiJiaLiRadio">
+                                <div class="yiJiaLiRadioBar">
+                                    <span class="yiJiaLiRadioBarSp yiJiaLiRadioBarSp1"></span>
+                                    <span class="yiJiaLiRadioBarSp yiJiaLiRadioBarSp2"></span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li v-link="{path:'/home/homecenter'}" class="yiJiaLi" @click="homecenter">
+<span class="yiJiaLiSp yiJiaLiSp2"></span>
+                        个人中心
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+        </template>
+        <!--------------------------------------------homepage---------------------------------------->
+        <template id="homepage">
+            <header class="yiJiaHeader">
+                <span class="yijiaadvices"></span>
+                <span class="yijiaadvicesNum">
+                        <span class="yijiaadvicesNums">
+                            9+
+                        </span>
+                </span>
+
+
+                <span class="headerYiJia">壹嘉</span>
             </header>
-            <div class="findList clearfix ">
-                <div class="listLeft findActive" v-link="{path:'/seek/business'}">
-                    <span>单程</span>
-
+            <div class="yiJiaImg">
+                <div class="yiJiaImgs">
+                    <img class="yiJiaImg1" src="imgs/homeair.png" alt="">
                 </div>
-                <div class="listRight" v-link="{path:'/seek/private'}">
-                    <span>往返</span>
+                <div class="yiJiaImgs">
+                    <img src="" alt="">
                 </div>
             </div>
-            <router-view></router-view>
-            <div style="margin: 0.2rem 0.68rem;">
-                <div>
-                    提前5天预订，不得高于6折
+            <div class="yiJiacontent">
+                <div class="common yiJIaWcs yiJiaBoxs">
+                    <ul class="yiJIaWcsUl">
+                        <li class="yiJIaWcsLi yiJIaWcsLi1">我的行程</li>
+                        <li class="yiJIaWcsLi yiJIaWcsLi2">出差申请</li>
+                        <li class="yiJIaWcsLi yiJIaWcsLi3">审批</li>
+                    </ul>
                 </div>
-                <div>
-                    选好城市之后，选择出
+                <div class="common yiJIaGghh yiJiaBoxs">
+                    <ul class="yiJIaGghhUl">
+                        <li class="yiJIaGghhLi yiJIaGghhLi0" @click="domAirTic">国内机票</li>
+                        <li class="yiJIaGghhLi yiJIaGghhLi1">国际机票</li>
+                        <li class="yiJIaGghhLi yiJIaGghhLi2">国内酒店</li>
+                        <li class="yiJIaGghhLi yiJIaGghhLi3">海外酒店</li>
+                        <li class="yiJIaGghhLi yiJIaGghhLi4">火车票</li>
+                        <li class="yiJIaGghhLi yiJIaGghhLi5">用车</li>
+                    </ul>
+                </div>
+                <div class="common yiJiaYz ">
+                    <div class="common yiJiaYzLeft ">
+
+                    </div>
+                    提供优质服务
+                </div>
+                <div class="common yiJiaFw ">
+                    <ul class="yiJiaFwUl">
+                        <li class="yiJiaYzLi yiJiaYzLi0">接送机</li>
+                        <li class="yiJiaYzLi yiJiaYzLi1">带泊车</li>
+                        <li class="yiJiaYzLi yiJiaYzLi2">代办登机牌</li>
+                        <li class="yiJiaYzLi yiJiaYzLi3">要客通道</li>
+                    </ul>
                 </div>
             </div>
         </template>
-        <!--单程组件-->
-        <template id="business">
-            <div class="findContent">
-                <div class="findRoute clearfix">
-                    <div class="routrLeft">
-                        <span class="routrLeftImg"></span>
-                        <span class="routeActive" @click="scli">因公</span>
-                    </div>
-                    <div class="routrRight" @click="dcli">
-                        <span class="routrLeftImg"></span>
-                        <span>因私</span>
-                    </div>
-                </div>
-                <div class="findGo">
-                    <div class="findTrip" v-show="false">因公出行</div>
-                </div>
-                <div class="findGo">
-                    <div class="findTrip"> 因公出行</div>
-                </div>
-                <div class="findGo clearfix">
-                    <span class="findTrip" style="float: left;width: 30%; color:#000;margin-right:0;">北京</span>
-                    <span class="tripBac"></span>
-                    <span class="findTrip" style="float: right;width: 30%; color:#000;text-align: right">北京</span>
-                </div>
-                <div class="findGo clearfix">
-                    <div class="findTrip">
-                        <span style="color:#000">6月4日</span>
-                        <span style="color:#000">周三</span>
-                    </div>
-                </div>
-                <div class="findGo clearfix">
-                    <span class="findTrip" style="float: left;width: 30%; color:#000;margin-right:0;">北京</span>
-                    <span class="findTrip" style="float: right;width: 30%; color:#000;text-align: right">大连</span>
-                </div>
-                <div class="findGo">
-                    <div class="findCheck">
-                        <!--<input type="che">-->
-                        <span>本次出行需要未来人员定义</span>
-                    </div>
-                </div>
-                <div class="findGo">
-                    <div class="findSub">
-                        <a @click="fun" style="color:#fff;">搜索</a>
-                        <!--<span></span>-->
-                    </div>
-                </div>
-                <!--<router-view></router-view>-->
-            </div>
+        <!-- -----------------------------------------homecenter  ---------------------------------- -->
+        <template id="homecenter">
+            <header class="">
+                <span class="">张海洋行政部</span>
+            </header>
+            个人中心
         </template>
-        <!-- 往返组件-->
-        <template id="private">
+        <!-- -----------------------------------------seek  -----------------------------  --------- -->
+        <template id="seek">
+            <!--<div id="seek">-->
+            <div>
+                <div style="height:3.2rem; margin-bottom:0.5rem;">
+                    <header class="findHeader">
+                        <span class="findHeaderBar" @click="ticInquires"></span>
+                        <span>机票查询</span>
+                    </header>
+                </div>
+                <div class="findList clearfix ">
+                    <div :class="{listLeft:true,findActive:sdActivel}" @click="oneway">
+                        <span>单程</span>
 
-            <div class="findContent">
-                <div class="findRoute clearfix">
-                    <div class="routrLeft">
-                        <span class="routrLeftImg"></span>
-                        <span class="routeActive">单程</span>
                     </div>
-                    <div class="routrRight">
-                        <span class="routrLeftImg"></span>
+                    <div :class="{listRight:true,findActive:sdActiver}" @click="goback">
                         <span>往返</span>
                     </div>
                 </div>
-                <div class="findGo">
-                    <div class="findTrip">因私---------------------出行</div>
-                </div>
-                <div class="findGo">
-                    <div class="findTrip"> 因公出行</div>
-                </div>
-                <div class="findGo clearfix">
-                    <span class="findTrip" style="float: left;width: 30%; color:#000;margin-right:0;">北京</span>
-                    <span class="tripBac"></span>
-                    <span class="findTrip" style="float: right;width: 30%; color:#000;text-align: right">北京</span>
-                </div>
-                <div class="findGo clearfix">
-                    <div class="findTrip">
-                        <span style="color:#000">6月4日</span>
-                        <span style="color:#000">周三</span>
+                <div class="findContent">
+                    <div class="findRoute clearfix">
+                        <div class="routrLeft">
+                            <span class="routrLeftImg"></span>
+                            <span :class="{routeActive:sdActivel1}" @click="business">因公</span>
+                        </div>
+                        <div class="routrRight">
+                            <span class="routrLeftImg"></span>
+                            <span :class="{routeActive:sdActiver1}" @click="privately">因私</span>
+                        </div>
                     </div>
-                </div>
-                <div class="findGo clearfix">
-                    <span class="findTrip" style="float: left;width: 30%; color:#000;margin-right:0;">北京</span>
-                    <span class="findTrip" style="float: right;width: 30%; color:#000;text-align: right">大连</span>
-                </div>
-                <div class="findGo">
-                    <div class="findCheck">
-                        <!--<input type="che">-->
-                        <span>本次出行需要未来人员定义</span>
-                    </div>
-                </div>
-                <div class="findGo">
-                    <div class="findSub">
-                        <a @click="fun" style="color:#fff;">搜索</a>
-                        
-                        <!--<span></span>-->
-                    </div>
-                </div>
-                <!--<router-view></router-view>-->
-            </div>
-        </template>
-        <!--航班列表-->
-        <template id="list1">
-            <div>
-                <span style="width:7rem;display: inline-block;" @click="prev"><</span>
-                <span style="text-align: center;display: inline-block;">北京-首都</span>
-            </div>
-            <div class="clearfix">
-                <div class="float">
-                    <span><</span>
-                    <span>前一天</span>
-                </div>
-                <div class="float">
-                    <!--<div style="width:970px; margin:10px auto;">-->
-                    <input class="laydate-icon" onclick="laydate()">
-                    <!--</div>-->
-                </div>
-                <div class="float"><span>></span>
-                    <span>后一天</span></div>
-            </div>
-            <ul>
-                <li v-for="(index, todo)  in todos" class="clearfix lis" @click="clic">
-                    <div class="float" style="width:90px;">
-                        <div>{{todo.text1}}</div>
-                        {{$index}}
-                        <div><span>东航</span></div>
-                    </div>
-                    <div class="float" style="width:80px;">{{todo.text2}}</div>
-                    <div class="float">{{todo.text3}}</div>
-                    <!--{{ todo.text }}-->
-                </li>
-            </ul>
-        </template>
-        <!--点击航班列表后具体展示-->
-        <template id="listsub">
 
-            <ul>
-                {{ $route.params.author}}
-                <li class="clearfix lis" @click="fun">
-                    <div class="float" style="width:90px;">
-                        <div>北京-天津</div>
-                        <div><span>东航</span></div>
+                    <div v-if="sdActivel1">
+                        <div class="findGo">
+                            <div class="findTrip">
+
+                                <input class="findTripInp" type="text" placeholder="选择出差申请单" onfocus="this.placeholder=''" onblur="this.placeholder='选择出差申请单'">
+                            </div>
+                        </div>
+                        <div class="findGo">
+                            <div class="findTrip">
+                                <input class="findTripInp" type="text" placeholder="选择出行人" onfocus="this.placeholder=''" onblur="this.placeholder='选择出行人'">
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="float" style="width:80px;">
-                        <span data-toggle="modal" data-target="#layer" v-on:click="nowIndex=$index">违</span>
+                    <div class="findGo clearfix">
+                        <span class="findTrip" style="float: left;width: 30%; color:#646464;margin-right:0;" @click="top1">北京</span>
+                        <span class="tripBac"></span>
+                        <span class="findTrip" style="float: right;width: 30%; color:#646464;text-align: right" @click="top1">昆明</span>
                     </div>
-                    <div class="float">113213</div>
-                    <!--{{ todo.text }}-->
-                </li>
-            </ul>
+                    <div class="findGo clearfix">
+                        <div class="findTrip clearfix">
+                            <div class="findTripLeft">
+                                <span style="color:#646464">6月4日</span>
+                                <span style="color:#646464; font-size:0.5rem;">周三</span>
+                            </div>
+                            <div class="findTripRight" v-if="sdActiver">
+                                <span style="color:#646464">6月6日</span>
+                                <span style="color:#646464; font-size:0.5rem;">周五</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="findGo clearfix">
+                        <div class="findTrip findChild">
+                            <div class="findChild1">
+                                <span style="font-size:0.5rem;">带婴儿</span><br>
+                                <span style="font-size:0.5rem;">0-2岁</span>
+                            </div>
+                            <div class="findChild1">
+                                <span style="font-size:0.5rem;">带儿童</span><br>
+                                <span style="font-size:0.5rem;">0-12岁</span>
+                            </div>
+                            <div class="findChild1 findChild2">
+                                选择仓位
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="findGo">
+                        <div class="findCheck">
+                            <!--<input type="che">-->
+
+                            <span @click="dui" :class="{findRadio:true, findRadioBg:dui1}"></span>
+                            <span>本次出行需要未来人员定义</span><br>
+                            <span style="color:#d4d4d4 ;font-size:0.3rem ;padding-left:0.5rem;">勾选后，本次出行将使用您的差旅标准</span>
+
+                        </div>
+                    </div>
+                    <div class="findGo" @click="grabble">
+                        <div class="findSub">
+                            <a style="color:#fff;">搜索</a>
+
+                            <!--<span></span>-->
+                        </div>
+                    </div>
+                    <!--<router-view></router-view>-->
+                </div>
+                <div class="findFooter">
+                    <p class="findFooter1">
+                        本次预定使用张三的差旅标准
+                    </p>
+                    <p class="findFooter2">
+                        选好城市之后，选择出
+                    </p>
+                </div>
+            </div>
+            <div :class="{abc:true,abc1:abc}" @click="top1">
+                我是城市控件
+            </div>
+            <!--</div>-->
         </template>
-        <!---->
-        <!--遮罩层、、、-->
-        <div role="dialog" class="modal fade bs-example-modal-sm" id="layer">
-            <div class="modal-dialog" style="margin-top:150px;">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span>&times;</span>
-                        </button>
-                        <h4 class="modal-title">违背原因、、、、、、</h4>
-                        <h4 class="modal-title" style="margin:60px 0;">超过五天、、、、、、</h4>
-                    </div>
-                    <div class="modal-body text-right">
-                        <!--<button data-dismiss="modal" class="btn btn-primary btn-sm">取消</button>
-                        <button data-dismiss="modal" class="btn btn-danger btn-sm" v-on:click="deleteMsg(nowIndex)">确认</button>-->
-                    </div>
+        <!--------------------------------------------航班列表------------------------------------------>
+        <template id="list1">
+            <!--<header class="findHeader">
+                 <span class="findHeaderBar">&#8249</span>
+                <span style="text-align: center;display: inline-block;">北京-首都</span>
+            </header>-->
+
+            <div id="#list">
+                <div style="height:3.2rem; margin-bottom:0.5rem;">
+                    <header class="findHeader">
+                        <span class="findHeaderBar" @click="prev"></span>
+                        <span>北京-首都</span>
+                    </header>
+                </div>
+            </div>
+            <router-view></router-view>
+            <div class="listFooter">
+                <ul class="clearfix listFooterUl">
+                    <!--<li v-for="(index, todo)  in todos" :class="{listFooterLi:true,listFooterActive:listFooterActive}" @click="funs($index,todo)">
+                        {{todo.a}}
+                    </li>-->
+                    <!--v-link="{name: 'user', params: {userId: 1}"-->
+                    <li @click="funs1" v-link="{path:'/list1/flightList'}" :class="{listFooterLi:true, listFooterLi1:listActive1, listFooterLi1w:true}"
+                        @click="funs($index,todo)">
+                        从早到晚
+                    </li>
+                    <li @click="funs2" v-link="{path:'/list1/cost'}" :class="{listFooterLi:true, listFooterLi2:listActive2, listFooterLi2w:true}">价格</li>
+                    <li @click="funs3" v-link="{path:'/list1/filtrate'}" :class="{listFooterLi:true, listFooterLi3:listActive3, listFooterLi3w:true}">航班筛选</li>
+                </ul>
+            </div>
+    </div>
+    </template>
+    <!--------------------------------------------航班列表 列表组件-------------------------------------->
+    <template id="flightList">
+        <div class="listDate clearfix common">
+            <div class="float listDateLeft clearfix">
+                <div class="float listDatePrev1">
+                    <span class="listFloat listDatePrev">&#8249</span>
+                </div>
+                <div class="float listDatePrev2">
+                    <span class="listDatePrev">前一天</span>
+                    <span class="listDatePrev3">¥554</span>
+                </div>
+            </div>
+            <div class="float clearfix">
+                <!--<div style="width:970px; margin:10px auto;">-->
+                <div class=" listFloat laydateBg clearfix">
+                    <input class="laydate-icon" onclick="laydate()">
+                </div>
+                <!--</div>-->
+            </div>
+            <div class="float listDateRight clearfix">
+
+                <div class="float listDatePrev2">
+                    <span class="listDateNext">后一天</span>
+                    <span class="listDatePrev3">¥854</span>
+                </div>
+                <div class="float listDatePrev1">
+                    <span class="listFloat listDatePrev">&#8250</span>
                 </div>
             </div>
         </div>
-        <!--//////////-->
+        <ul class="listUl">
+            <li v-for="(index, todo)  in todos" class="clearfix listL" @click="clic($index)">
+                <div class="float clearfix listTime">
+                    <div class="listTime1 clearfix">
+                        <div>
+                            <span>{{todo.timem}}</span> </div>
+                        <div> <span>-----</span> </div>
+                        <div> <span>{{todo.timee}}</span> </div>
+                        <div class="listTime1S4"> <span>+1天</span> </div>
+                    </div>
+                    <div class="listTime2">
+                        <span class="listTime2S listTime2S1">
+                                首都-T2
+                            </span>
+                        <span class="listTime2S listTime2S2">
+                               周水子
+                            </span>
+                    </div>
+                    <div class="listTime3">
+                        <span></span>
+                        <span>东航MU2fsdfds8295</span>
+                    </div>
+                </div>
+                <div class="float listWei">
+                    <div class="listWeiS">
+                        违
+                    </div>
+                </div>
+                <div class="float listMoney">
+                    <div class="listMoney1">
+                        <span class="">{{todo.text3}}</span>
+                    </div>
+                    <div class="listTime2S listMoney2">
+                        <span>经济舱</span>
+                        <span>9.0折</span>
+                    </div>
+                    <div class="listMoney3">余三张</div>
+                </div>
+
+            </li>
+        </ul>
+    </template>
+    <template id="cost">
+        <div @click="fun">价格</div>
+
+    </template>
+    <template id="filtrate">
+        <div>
+            航班筛选
+        </div>
+
+    </template>
+
+    <!--------------------------------------------航班列表 列表组件-------------------------------------->
+
+    <template id="serviceProvider">
+        <div class="common serProTravel">
+            <div class="serProTravelAll">
+                <div class="serProTravelLi serProTravel1">
+                    <span class="serProTravel1s"></span>
+                    <span>东航MU4352</span>
+                </div>
+                <div class="serProTravelLi clearfix serProTravel2">
+                    <div class="float">
+                        <div class="serProTravel2Tim" style="text-align:center;">00:10</div>
+                        <div>首都机场-T2</div>
+                    </div>
+                    <div class="float serProTravel2Mid">
+
+                    </div>
+                    <div class="float">
+                        <div class="serProTravel2Tim">
+                            00:10
+                            <span class="serProTravel2TimSp">+1天</span>
+                        </div>
+                        <div>首都机场-T2</div>
+                    </div>
+                </div>
+                <div class="serProTravelLi serProTravel1 serProTravel3">
+                    舱位：123|有餐饮|机型：523
+                </div>
+            </div>
+        </div>
+        <!--各种仓 外层-->
+        <div class="allTanks">
+            <!--各种仓-->
+            <div class="common allTank touristClass">
+                <div class="float"> 经济舱 </div>
+                <span class="floatRight touristClassStar">起</span>
+                <div class="floatRight moneyColor">¥1125</div>
+            </div>
+            <!--各种仓列表-->
+            <ul class="allTankUl">
+                <li class="allTankList">
+                    <div class="clearfix allTankListTop">
+                        <div class="float allTankListDeta">
+                            <span class="allTankListBg"></span>
+                            <span class="allTankListText"> 空港嘉华</span>
+                            <span class="allTankListSec">产品说明</span>
+                            <span class="allTankListMon moneyColor">¥</span>
+
+                            <span class="allTankListMons moneyColor">1114</span>
+                            <span class="allTankListJia">+</span>
+                            <span class="allTankListJiaMon allTankListMon moneyColor">¥10</span>
+                        </div>
+                        <div class="floatRight allTankListOrder">订</div>
+
+                    </div>
+                    <div class="allTankListBottom">
+                        含：免费办理登机牌等服务
+                </li>
+                <li class="allTankList">
+                    <div class="clearfix allTankListTop">
+                        <div class="float allTankListDeta">
+                            <span class="allTankListBg"></span>
+                            <span class="allTankListText"> 空港嘉华</span>
+                            <span class="allTankListSec">产品说明</span>
+                            <span class="allTankListMon moneyColor">¥</span>
+
+                            <span class="allTankListMons moneyColor">1114</span>
+                            <span class="allTankListJia">+</span>
+                            <span class="allTankListJiaMon allTankListMon moneyColor">¥10</span>
+                        </div>
+                        <div class="floatRight allTankListOrder">订</div>
+
+                    </div>
+                    <div class="allTankListBottom">
+                        含：免费办理登机牌等服务+免费vip休息室
+                    </div>
+                </li>
+                <li class="allTankList">
+                    <div class="clearfix allTankListTop">
+                        <div class="float allTankListDeta">
+                            <span class="allTankListBg"></span>
+                            <span class="allTankListText"> 空港嘉华</span>
+                            <span class="allTankListSec">产品说明</span>
+                            <span class="allTankListMon moneyColor">¥</span>
+
+                            <span class="allTankListMons moneyColor">1114</span>
+                            <span class="allTankListJia">+</span>
+                            <span class="allTankListJiaMon allTankListMon moneyColor">¥10</span>
+                        </div>
+                        <div class="floatRight allTankListOrder">订</div>
+
+                    </div>
+                    <div class="allTankListBottom">
+                        含：免费办理登机牌等服务+免费vip休息室
+                    </div>
+                </li>
+            </ul>
+            <div class="allTaMoreService">
+                更多服务商
+                <span class="allTaMoreServiceBg"></span>
+            </div>
+            </div>
+            <!--各种仓外层-->
+            <div class="allTanks">
+                <!--各种仓-->
+                <div class="common allTank touristClass">
+                    <div class="float"> 商务舱 </div>
+                    <span class="floatRight touristClassStar">起</span>
+                    <div class="floatRight moneyColor">¥1125</div>
+                </div>
+                <!--各种仓列表-->
+                <ul>
+                    <li class="allTankList">
+                        <div class="clearfix allTankListTop">
+                            <div class="float allTankListDeta">
+                                <span class="allTankListBg"></span>
+                                <span class="allTankListText"> 空港嘉华</span>
+                                <span class="allTankListSec">产品说明</span>
+                                <span class="allTankListMon moneyColor">¥</span>
+
+                                <span class="allTankListMons moneyColor">1114</span>
+                                <span class="allTankListJia">+</span>
+                                <span class="allTankListJiaMon allTankListMon moneyColor">¥10</span>
+                            </div>
+                            <div class="floatRight allTankListOrder">订</div>
+
+                        </div>
+                        <div class="allTankListBottom">
+                            含：免费办理登机牌等服务
+                    </li>
+                    <li class="allTankList">
+                        <div class="clearfix allTankListTop">
+                            <div class="float allTankListDeta">
+                                <span class="allTankListBg"></span>
+                                <span class="allTankListText"> 空港嘉华</span>
+                                <span class="allTankListSec">产品说明</span>
+                                <span class="allTankListMon moneyColor">¥</span>
+
+                                <span class="allTankListMons moneyColor">1114</span>
+                                <span class="allTankListJia">+</span>
+                                <span class="allTankListJiaMon allTankListMon moneyColor">¥10</span>
+                            </div>
+                            <div class="floatRight allTankListOrder">订</div>
+
+                        </div>
+                        <div class="allTankListBottom">
+                            含：免费办理登机牌等服务
+                        </div>
+                    </li>
+                </ul>
+                </div>
+
+
+
+    </template>
+    <!-- -----------------------------------------往返组件------------------------------------------>
+    <!--点击航班列表后具体展示-->
+    <template id="listsub">
+
+
+    </template>
+    <!--------------------------------------------遮罩层、、-------------------------------------、-->
+    <div role="dialog" class="modal fade bs-example-modal-sm" id="layer">
+        <div class="modal-dialog" style="margin-top:150px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    <h4 class="modal-title">违背原因、、、、、、</h4>
+                    <h4 class="modal-title" style="margin:60px 0;">超过五天、、、、、、</h4>
+                </div>
+                <div class="modal-body text-right">
+                    <!--<button data-dismiss="modal" class="btn btn-primary btn-sm">取消</button>
+                        <button data-dismiss="modal" class="btn btn-danger btn-sm" v-on:click="deleteMsg(nowIndex)">确认</button>-->
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="js/main.js"></script>
+    <!--------------------------------------------end遮罩层、、----------------------------------、-->
+    </div>
+    <script src="js/main3.js"></script>
 </body>
 
 </html>
